@@ -2,11 +2,12 @@ package services
 
 import (
 	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestSort(t *testing.T) {
-	elements := []int{7, 9, 5, 3, 0, 4, 6, 8, 2}
+	elements := []int{7, 9, 5, 3, 0, 4, 6, 8, 2, 1}
 
 	fmt.Println(elements)
 
@@ -21,4 +22,7 @@ func TestSort(t *testing.T) {
 	if elements[len(elements)-1] != 0 {
 		t.Error("last element should be 0")
 	}
+
+	assert.NotNil(t, elements)
+	assert.EqualValues(t, 10, len(elements))
 }
